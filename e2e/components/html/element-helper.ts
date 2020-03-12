@@ -126,7 +126,7 @@ export class ElementHelper {
 
 
     static async click(targetElement: ElementFinder) {
-        await expect(await WaitHelper.getInstance().waitForElementToBeClickable(targetElement)).toBe(true);
+        await WaitHelper.getInstance().waitForElementToBeClickable(targetElement);
         return await targetElement.click();
     }
 

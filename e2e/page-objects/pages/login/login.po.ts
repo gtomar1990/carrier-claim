@@ -1,6 +1,5 @@
 import { BasePage } from '../base-page';
-import { element } from 'protractor';
-import { By } from 'selenium-webdriver';
+import { element, By } from 'protractor';
 
 export class LoginPage extends BasePage {
     url = '/';

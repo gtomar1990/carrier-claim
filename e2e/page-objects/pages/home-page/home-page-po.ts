@@ -1,5 +1,4 @@
-import { element } from "protractor"
-import { By } from "selenium-webdriver"
+import { element, By } from "protractor"
 
 export class HomePageLocator {
 
@@ -15,6 +14,13 @@ export class HomePageLocator {
      */
     static get naviagtionBarList() {
         return '//*[@class="collapse navbar-collapse navbar-ex1-collapse"]//*[@class="nav navbar-nav"]/li/a'
+    }
+
+    /**
+     * @description Swtich to the banner frame
+     */
+    static get bannerFrame(){
+        return element(By.css('[id="banner"]')).getWebElement()
     }
 
     /**

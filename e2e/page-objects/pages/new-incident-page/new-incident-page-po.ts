@@ -49,7 +49,7 @@ export class NewIncidentPageLocator {
          * @description get the Date Of Call Textbox
          */
     static get dateOfCallTextbox() {
-        return element(By.css('[id=CallDate"]'))
+        return element(By.css('[id="CallDate"]'))
     }
 
     /**

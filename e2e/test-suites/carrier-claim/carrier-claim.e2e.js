@@ -5,6 +5,7 @@ import { HomePageHelper } from '../../page-objects/pages/home-page/home-page-hel
 import { PageHelper } from '../../components/html/page-helper';
 import { IncidentReportHelper } from '../../page-objects/pages/incident-report/incident-report-helper';
 import { NewIncidentPageHelper } from '../../page-objects/pages/new-incident-page/new-incident-page-helper';
+import { HomePageLocator } from '../../page-objects/pages/home-page/home-page-po';
 
 var resultLeaker = {
     suiteStarted: function (result) { jasmine.results = { suite: result }; },
@@ -43,6 +44,8 @@ describe(SuiteNames.regressionTestSuite + " " + TestModuleNames.OpenCart, () => 
         browser.logger.info("Login into the User");
         await LoginPageHelper.loginIntoUserOnly(browser.params.user_name, browser.params.user_password);
 
+        browser.logger.info("Switch to the frame");
+        await HomePageHelper.switchToBannerFrame()
         browser.logger.info("Verify the Home page of the Application");
         await HomePageHelper.verifyHomePage();
 

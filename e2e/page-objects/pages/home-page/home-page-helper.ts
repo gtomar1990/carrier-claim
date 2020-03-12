@@ -2,6 +2,7 @@ import { ElementHelper } from "../../../components/html/element-helper";
 import { HomePageLocator } from "./home-page-po";
 import { ArrayUtils } from "../../../components/misc-utils/array-utilities";
 import { browser } from "protractor";
+import { PageHelper } from "../../../components/html/page-helper";
 
 export class HomePageHelper {
 
@@ -10,7 +11,7 @@ export class HomePageHelper {
      */
     static async verifyDreamOrbitLogo() {
         //Verify the Dream Orbit Logo on the Home page
-        await expect(await ElementHelper.isElementDisplayed(HomePageLocator.dreamOrbitLogo)).toBe(true, 'Dream Orbit logo is not there');
+        await expect(await ElementHelper.isElementPresent(HomePageLocator.dreamOrbitLogo)).toBe(true, 'Dream Orbit logo is not there');
     }
 
     /**
@@ -27,6 +28,14 @@ export class HomePageHelper {
     static async verifyIncidentReportLink() {
         //Verify the incident report link
         await expect(await ElementHelper.isElementDisplayed(HomePageLocator.incidentReportLink)).toBe(true, 'Incident Report Link is not there')
+    }
+
+    /**
+     * @description Switch to the Banner Frame
+     */
+    static async switchToBannerFrame() {
+        await PageHelper.switchToFrame(HomePageLocator.bannerFrame)
+
     }
 
     /**

@@ -70,9 +70,7 @@ export class LoginPageHelper {
         // await WaitHelper.getInstance().waitForElementToBeClickable(LoginPage.loginButton);
 
         //Click on Login button
-        await ElementHelper.actionMoveAndClick(LoginPage.loginButton)
-
-        await browser.sleep(4000)
+        await ElementHelper.click(LoginPage.loginButton)
     }
 
     // /**
